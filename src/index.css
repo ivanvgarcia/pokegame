@@ -1,3 +1,8 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -11,4 +16,84 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+  background: rgb(255, 255, 255);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: fadeIn .4s ease-in forwards;
+}
+
+.card {
+  min-width: 200px;
+  flex: 0 0 20%;
+  margin: 1em;
+  box-shadow: 0 4px 5px rgb(53, 51, 51);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 2px;
+  background: #fcd00a;
+
+}
+
+.card:hover .card-header {
+  transform: scale(1.05);
+}
+
+.card-header {
+  background: rgb(8, 125, 180);
+  margin: 1em;
+  border-radius: 2px;
+  transition: transform .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: rgb(56, 51, 51);
+}
+
+.card-pokemon-name {
+  font-size: 1.6rem;
+  flex: 1 0 100%;
+  margin: 0;
+}
+
+.card-pokemon-type {
+  font-size: 1rem;
+  flex: 1;
+}
+
+.card-pokemon-experience {
+  font-size: 1rem;
+  flex: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
